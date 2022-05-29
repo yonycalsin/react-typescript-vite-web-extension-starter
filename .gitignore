@@ -1,1 +1,13 @@
+.DS_Store
+.vite-ssg-dist
+.vite-ssg-temp
+*.crx
+*.local
+*.log
+*.pem
+*.xpi
+*.zip
+dist
+dist-ssr
+extension/manifest.json
 node_modules
