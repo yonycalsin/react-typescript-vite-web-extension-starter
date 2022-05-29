@@ -8,11 +8,12 @@
     "format": "pnpm run prettier --write",
     "check-format": "pnpm run prettier --list-different",
     "dev:web": "vite",
-    "build": "cross-env NODE_ENV=production run-s build:web prepare:manifest",
+    "build": "cross-env NODE_ENV=production run-s clean build:web prepare:manifest",
     "build:web": "vite build",
     "start:web": "vite preview",
     "prepare:manifest": "esno ./scripts/manifest/prepare-manifest.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf -rf extension/dist extension/manifest.json"
   },
   "keywords": [],
   "author": "Yony Calsin",
@@ -32,6 +33,7 @@
     "npm-run-all": "4.1.5",
     "prettier": "2.6.2",
     "prettier-plugin-packagejson": "2.2.18",
+    "rimraf": "3.0.2",
     "typescript": "4.7.2",
     "vite": "2.9.9"
   },

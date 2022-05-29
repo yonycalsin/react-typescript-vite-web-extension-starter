@@ -16,6 +16,7 @@ specifiers:
   prettier-plugin-packagejson: 2.2.18
   react: 18.1.0
   react-dom: 18.1.0
+  rimraf: 3.0.2
   typescript: 4.7.2
   vite: 2.9.9
   webextension-polyfill: 0.9.0
@@ -39,6 +40,7 @@ devDependencies:
   npm-run-all: 4.1.5
   prettier: 2.6.2
   prettier-plugin-packagejson: 2.2.18_prettier@2.6.2
+  rimraf: 3.0.2
   typescript: 4.7.2
   vite: 2.9.9
 
@@ -1134,7 +1136,7 @@ packages:
     dev: true
 
   /fs.realpath/1.0.0:
-    resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
+    resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
   /fsevents/2.3.2:
@@ -1679,6 +1681,13 @@ packages:
   /reusify/1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+    dev: true
+
+  /rimraf/3.0.2:
+    resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    hasBin: true
+    dependencies:
+      glob: 7.2.3
     dev: true
 
   /rollup/2.75.1:
