@@ -1,5 +1,6 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom/client'
+import { App } from './app'
 
 // @ts-ignore ts(1208)
 ;(() => {
@@ -18,9 +19,7 @@ import ReactDOM from 'react-dom/client'
 
   ReactDOM.createRoot(root).render(
     <React.StrictMode>
-      <div>
-        <h1>Content Scripts - Content</h1>
-      </div>
+      <App />
     </React.StrictMode>,
   )
 })()
