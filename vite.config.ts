@@ -1,11 +1,10 @@
-import { defineConfig, PluginOption, UserConfig } from 'vite'
+import { ConfigEnv, defineConfig, PluginOption, UserConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { createHtmlPlugin } from 'vite-plugin-html'
 
 import { isDev, resolvePath } from './scripts/utils'
 
-// https://vitejs.dev/config/
-export default defineConfig((config): UserConfig => {
+export const getSharedConfig = (config: ConfigEnv): UserConfig => {
   const plugins: PluginOption[] = [react()]
 
   if (config.command === 'build') {
@@ -17,17 +16,29 @@ export default defineConfig((config): UserConfig => {
   }
 
   return {
-    plugins,
     root: resolvePath('src'),
-    base: '/dist/',
-    define: {
-      __DEV__: isDev,
-    },
+    plugins,
     resolve: {
       alias: {
         '~/': resolvePath('src'),
       },
     },
+    define: {
+      __DEV__: isDev,
+    },
+    optimizeDeps: {
+      include: ['webextension-polyfill'],
+    },
+  }
+}
+
+// https://vitejs.dev/config/
+export default defineConfig((config): UserConfig => {
+  const sharedConfig = getSharedConfig(config)
+
+  return {
+    ...sharedConfig,
+    base: '/dist/',
     build: {
       outDir: resolvePath('extension/dist'),
       emptyOutDir: true,

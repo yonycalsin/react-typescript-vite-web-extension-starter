@@ -22,6 +22,12 @@ export function getManifest() {
       persistent: false,
     },
     permissions: ['tabs', 'storage', 'activeTab', 'http://*/', 'https://*/'],
+    content_scripts: [
+      {
+        matches: ['http://*/*', 'https://*/*'],
+        js: ['./dist/content-scripts/main.js'],
+      },
+    ],
   }
 
   return manifest
